@@ -17,5 +17,6 @@ EXPOSE 8080
 EXPOSE 5080
 RUN chmod 777 ./app
 ENV RUN=api
+RUN PATH=$GOBIN:$PATH
 # Run the executable
 CMD ["app $RUN"]
