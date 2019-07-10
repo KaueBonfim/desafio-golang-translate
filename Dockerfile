@@ -15,5 +15,5 @@ RUN go build -v app.go
 EXPOSE 8080
 EXPOSE 5080
 RUN chmod 777 ./app
-COPY entry.sh .
+
 ENTRYPOINT [ "entry.sh" ]
