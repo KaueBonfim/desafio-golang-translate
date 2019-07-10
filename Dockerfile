@@ -16,4 +16,4 @@ EXPOSE 8080
 EXPOSE 5080
 RUN chmod 777 ./app
 
-ENTRYPOINT [ "sh ","$GOPATH/src/github.com/KaueBonfim/desafio-golang-translate/entry.sh" ]
+CMD [ "$GOPATH/src/github.com/KaueBonfim/desafio-golang-translate/app" ]
