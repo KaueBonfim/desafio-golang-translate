@@ -17,4 +17,4 @@ EXPOSE 8080
 EXPOSE 5080
 
 # Run the executable
-CMD ["desafio-golang-translate"]
+CMD ["desafio-golang-translate api"]
