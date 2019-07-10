@@ -15,6 +15,6 @@ RUN go install -v ./...
 # This container exposes 
 EXPOSE 8080
 EXPOSE 5080
-
+RUN cp $GOBIN/desafio-golang-translate /bin/
 # Run the executable
 CMD ["desafio-golang-translate api"]
