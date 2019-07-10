@@ -10,11 +10,12 @@ WORKDIR $GOPATH/src/github.com/KaueBonfim/desafio-golang-translate
 RUN go get -d -v ./...
 
 # Install the package
-RUN go install -v ./...
+RUN go build -v app.go
 
 # This container exposes 
 EXPOSE 8080
 EXPOSE 5080
-RUN cp $GOBIN/desafio-golang-translate /bin/
+RUN chmod 777 ./app
+ENV RUN=api
 # Run the executable
-CMD ["desafio-golang-translate api"]
+CMD ["./app $RUN"]
