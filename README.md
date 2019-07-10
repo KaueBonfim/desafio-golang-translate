@@ -32,10 +32,14 @@ Cria um entrypoint em uma API rest, na path 0.0.0.0:5080/translate.
 ### entrypoins
 
 Organiza das entradas recebidas na linha de comando e executa as opções, que podem ser:
-*help*:Opção de socorro do app pela linha de comando.
-*cmd(Defalut/padrão)*: Opção para fazer a tradução pela linha de comando.
-*api*: Opção para gerar uma API com metodo post na porta 5080 nco caminho /translate.
-*web*: Opção abre a uma pagina com um form simples para fazer uma tradução pela pagina Web.
+
+>*help*:Opção de socorro do app pela linha de comando.
+
+>*cmd(Defalut/padrão)*: Opção para fazer a tradução pela linha de comando.
+
+>*api*: Opção para gerar uma API com metodo post na porta 5080 nco caminho /translate.
+
+>*web*: Opção abre a uma pagina com um form simples para fazer uma tradução pela pagina Web.
 
 ### test
 
@@ -51,10 +55,10 @@ Cria um entrypoint web, na path 0.0.0.0:8080/translate.
 O APP recebe uma entrada em kwegonian, verifica qual caracteres são caracteres alfanumericos em kwegonian, e retorna uma saida numerica caso exista caracteres validos.
 
 ```mermaid
-graph LR
-A[Input] -- Segregação de caracteres --> B((Validações de Ordem))
-B --> D((Tradução e Calculo))
-D --> C[Output]
+graph LR;
+A[Input] -- Segregação de caracteres --> B((Validações de Ordem));
+B --> D((Tradução e Calculo));
+D --> C[Output];
 ```
 
 
