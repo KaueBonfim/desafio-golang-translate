@@ -9,11 +9,11 @@ WORKDIR $GOPATH/src/github.com/KaueBonfim/desafio-golang-translate
 RUN go get -d -v ./...
 
 # Install the package
-RUN go build -v ./...
-RUN chmod 777 ./desafio-golang-translate 
+RUN go build -v app.go
+RUN chmod 777 ./app
 # This container exposes 
 EXPOSE 8080
 EXPOSE 5080
 
 # Run the executable
-CMD ["./desafio-golang-translate $TYPE_RUN"]
+CMD ["./app $TYPE_RUN"]
