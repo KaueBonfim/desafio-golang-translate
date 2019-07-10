@@ -3,7 +3,6 @@ FROM golang:1.12
 LABEL maintainer="Kaue Bonfim <kaueoliveir95@hotmail.com>"
 
 RUN go get -u -v github.com/KaueBonfim/desafio-golang-translate
-RUN export GOBIN=$GOPATH/bin/
 WORKDIR $GOPATH/src/github.com/KaueBonfim/desafio-golang-translate
 
 # Download all the dependencies
@@ -17,6 +16,5 @@ EXPOSE 8080
 EXPOSE 5080
 RUN chmod 777 ./app
 ENV RUN=api
-RUN PATH=$GOBIN:$PATH
 # Run the executable
-CMD ["app $RUN"]
+CMD ["./app $RUN"]
