@@ -18,4 +18,4 @@ EXPOSE 5080
 RUN chmod 777 ./app
 ENV RUN=api
 # Run the executable
-CMD ["./app $RUN"]
+CMD ["app $RUN"]
