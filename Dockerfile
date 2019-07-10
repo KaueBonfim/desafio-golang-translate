@@ -10,7 +10,7 @@ RUN go get -d -v ./...
 
 # Install the package
 RUN go build -v ./...
-
+RUN chmod 777 ./desafio-golang-translate 
 # This container exposes 
 EXPOSE 8080
 EXPOSE 5080
