@@ -1,8 +1,9 @@
 package translate
 
-import "strings"
-import "fmt"
+import "strings"// Manipula strings
+import "fmt"//Trabalha com a contextos de substituicao de strings
 
+// Struc Para traducao
 type Translate struct{
 	Input []int `json:"numbers"`
 	Text string `json:"input"`
@@ -11,9 +12,10 @@ type Translate struct{
 }
 
 func (ob *Translate) Getvalues() []int {
-
-	block_slipt:=strings.Split(ob.Text," ")
+	
+	block_slipt:=strings.Split(ob.Text," ")// Retira a string e forma um array com os espacos
 	for i:=0; i < len(block_slipt); i++{
+		//Verifica caracter a caracter se encaixa com os alfanumericos em kwegonian 
 		switch block_slipt[i] {
 			case "kil":
 				ob.Input=append(ob.Input,1)
@@ -34,12 +36,13 @@ func (ob *Translate) Getvalues() []int {
 		}
 		
 	}
-	
+	//retorna as entradas
 	return ob.Input
 
 }
 
 func (ob *Translate) Enumeric(){
+	//Faz as comas dos numeros em ordem verificando a logica dos numeros romanos
 	if len(ob.Input) > 0{
 		ob.validationOrder(ob.Input)
 		ultimo:=ob.Input[len(ob.Input)-1]
@@ -53,6 +56,6 @@ func (ob *Translate) Enumeric(){
 			}
 		}
 	}else{
-		fmt.Println("No character found")
+		fmt.Println("No character found")// Se não foi encontrado nenhum alfanumerico entao e retornado a saida nula
 	}
 }

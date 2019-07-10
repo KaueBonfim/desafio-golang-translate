@@ -1,12 +1,13 @@
 package test
 
 import (
-	"testing"
-	app "github.com/KaueBonfim/desafio-golang-translate/translate"
-	"fmt"
+	"testing"// lib de test
+	app "github.com/KaueBonfim/desafio-golang-translate/translate" // Lib para traducao
+	"fmt"// Trabalha com a linha de comando
 )
 
 func TestTranslate(t *testing.T) {
+	//Verifica se a traducao esta correta
 	translate:= app.Translate{Input:[]int{},Text:"polsx polsx pol jin kil"}
 	translate.Getvalues()
 	translate.Enumeric()
@@ -17,6 +18,8 @@ func TestTranslate(t *testing.T) {
 
 
 func TestInputs(t *testing.T) {
+	//Verifica se a conversao das palavras para numeros
+
 	translate:= app.Translate{Input:[]int{},Text:"polsx polsx pol jin kil"}
 	translate.Getvalues()
 	value_input:=[]int{1000,1000,10,5,1}
@@ -30,6 +33,8 @@ func TestInputs(t *testing.T) {
 
 
 func TestGetInvalidsChars(t *testing.T) {
+	//Verifica os caracteres invalidos estao corretos
+
 	translate:= app.Translate{Input:[]int{},Text:"Testado polsx Com pol Sucesso kil"}
 	translate.Getvalues()
 	if len(translate.Invalids) == 3{

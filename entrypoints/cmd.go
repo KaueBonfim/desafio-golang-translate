@@ -1,7 +1,7 @@
 package entrypoints
 
 import (
-	"fmt"
+	"fmt"// Para respostas no terminal
 )
 
 type Cmd struct {
@@ -30,25 +30,25 @@ func (cli *Cmd) Run(args []string) {
 		
 		cli.Type=args[0]
 
-
+		// Verifica qual o argumento
 		switch cli.Type {
-			case "cmd":
+			case "cmd":// linha de comando
 				input_cmd()
-			case "api":
+			case "api":// api na porta 5080
 				input_api()
-			case "web":
+			case "web":// pagina web na porta 8080
 				input_web()
-			case "help":
+			case "help":// help da linha de comando
 				fmt.Println(Help)
 				return
-			default:
-				fmt.Println("Invavlid Option")
+			default:// comandos invalidos
+				fmt.Println("Invavlid Option, set help")
 				return 
 		}
 		
 
 	} else {
-		input_cmd()
+		input_cmd()// o padrao e a linha de comando
 	}
 
 }

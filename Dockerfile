@@ -9,11 +9,8 @@ WORKDIR $GOPATH/src/github.com/KaueBonfim/desafio-golang-translate
 RUN go get -d -v ./...
 
 # Install the package
-RUN go build -v app.go
+RUN go install -v ./...
 
 # This container exposes 
 EXPOSE 8080
 EXPOSE 5080
-RUN chmod 777 ./app
-
-CMD [ "$GOPATH/src/github.com/KaueBonfim/desafio-golang-translate/app" ]
